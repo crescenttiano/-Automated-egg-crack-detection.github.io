@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eg - Egg Crack Detection System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Navigation Bar -->
+            <nav id="sidebar" class="col-md-2 d-none d-md-block sidebar bg-brown">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Upload Image</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">View Results</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Eg - Egg Crack Detection System</h1>
+                </div>
+                <p>Welcome to the Eg - Egg Crack Detection System. Use the navigation bar on the left to explore the features.</p>
+
+                <div>
+                    <h2>Upload Egg Image</h2>
+                    <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="egg-image">Select Image:</label>
+                            <input type="file" class="form-control-file" id="egg-image" name="egg-image">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Analyze</button>
+                    </form>
+                </div>
+                <div id="results">
+                    <h2>Results</h2>
+                    <p id="result-text">Upload an image to see the results here.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">Powered by Eg - Egg Crack Detection System.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Example JavaScript to handle form submission and display results
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle image upload and display results here
+            // This will require integration with the backend to process the image using CNN
+            document.getElementById('result-text').innerText = 'Analyzing image...';
+        });
+    </script>
+</body>
+</html>
